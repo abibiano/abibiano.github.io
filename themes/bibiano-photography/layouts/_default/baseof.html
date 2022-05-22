@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{{ $lang := .Site.Language.Lang | default "es" }}
+<html lang="{{ $lang }}">
+{{- partial "head.html" . -}}
+
+<body id="body" class="animsition tt-boxed">
+  {{- partial "header.html" . -}}
+  <!-- *************************************
+  		*********** Begin body content *********** 
+  		************************************** -->
+  <div id="body-content">
+    {{- block "main" . }}{{- end }}
+  </div>
+  <!-- End body content -->
+  {{- partial "footer.html" . -}}
+</body>
+
+</html>
