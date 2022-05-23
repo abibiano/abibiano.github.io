@@ -1,13 +1,11 @@
 {{ define "main" }}
-
 <!-- ==========================
 			///// Begin intro section /////
 			=========================== -->
 <section id="tt-intro" class="gallery-list-carousel slideshow-intro">
-  <div class="tt-intro-inner tt-wrap">
+  <div class="tt-intro-inner">
     <!-- add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) -->
     <div class="gl-carousel-wrap no-padding">
-      <!-- Optional: use class "no-padding" to disable paddings -->
 
       <!-- Begin content carousel (https://owlcarousel2.github.io/OwlCarousel2/)
 						====================================================================
@@ -50,7 +48,15 @@
 								data-dots="false"....................(true/false)
 								data-dots-speed="800"................(milliseconds)
 						-->
-      <div class="owl-carousel cc-height-full dots-right bg-dark" data-items="1" data-mouse-drag="false" data-loop="true" data-nav="true" data-animate-in="fadeIn" data-animate-out="fadeOut">
+      <div class="owl-carousel 
+        cc-height-full 
+        bg-dark 
+        dcc-hover-none
+        nav-inside 
+        nav-dark
+        dots-inside
+        dots-center 
+        dots-squared" data-margin="0" data-items="1" data-tablet-landscape="1" data-tablet-portrait="1" data-mobile-landscape="1" data-mobile-portrait="1" data-center="true" data-animate-in="fadeIn" data-animate-out="fadeOut" data-dots="true" data-nav="true" data-nav-speed="800" data-autoplay="1" data-loop="1">
 
         <!-- Begin carousel item 
 							========================= -->
@@ -60,7 +66,7 @@
           <span class="cover bg-transparent-5-dark"></span>
 
           <!-- cc image -->
-          <div class="cc-image bg-image" style="background-image: url(assets/img/intro/intro-1.jpg); background-position: 50% 50%;"></div>
+          <div class="cc-image bg-image" style="background-image: url(assets/img/intro/intro-6.jpg); background-position: 50% 50%;"></div>
 
           <!-- Begin intro caption 
 								=========================
@@ -76,7 +82,10 @@
               Create your own unique and beautiful photography website!
             </p>
 
-
+            <div class="margin-top-30">
+              <a href="https://themeforest.net/item/sepia-photography-portfolio-html-website-template/20195226?ref=Themetorium" class="btn btn-primary margin-top-5 margin-right-10" target="_blank">Buy It Now!</a>
+              <a href="albums-grid.html" class="btn btn-white-bordered margin-top-5">Discover More</a>
+            </div>
           </div>
           <!-- End intro caption -->
 
@@ -88,10 +97,10 @@
         <div class="cc-item">
 
           <!-- Element cover -->
-          <span class="cover bg-transparent-5-dark"></span>
+          <span class="cover bg-transparent-4-dark"></span>
 
           <!-- cc image -->
-          <div class="cc-image bg-image" style="background-image: url(assets/img/intro/intro-2.jpg); background-position: 50% 50%;"></div>
+          <div class="cc-image bg-image" style="background-image: url(assets/img/intro/intro-7.jpg); background-position: 50% 50%;"></div>
 
           <!-- Begin intro caption 
 								=========================
@@ -109,7 +118,7 @@
 
             <div class="margin-top-30">
               <a href="https://themeforest.net/item/sepia-photography-portfolio-html-website-template/20195226?ref=Themetorium" class="btn btn-primary margin-top-5 margin-right-10" target="_blank">Buy It Now!</a>
-              <a href="albums-carousel-no-crop.html" class="btn btn-white-bordered margin-top-5">Discover More</a>
+              <a href="albums-grid.html" class="btn btn-white-bordered margin-top-5">Discover More</a>
             </div>
           </div>
           <!-- End intro caption -->
@@ -122,10 +131,10 @@
         <div class="cc-item">
 
           <!-- Element cover -->
-          <span class="cover bg-transparent-5-dark"></span>
+          <span class="cover bg-transparent-4-dark"></span>
 
           <!-- cc image -->
-          <div class="cc-image bg-image" style="background-image: url(assets/img/intro/intro-3.jpg); background-position: 50% 50%;"></div>
+          <div class="cc-image bg-image" style="background-image: url(assets/img/intro/intro-8.jpg); background-position: 50% 50%;"></div>
 
           <!-- Begin intro caption 
 								=========================
@@ -143,7 +152,7 @@
 
             <div class="margin-top-30">
               <a href="https://themeforest.net/item/sepia-photography-portfolio-html-website-template/20195226?ref=Themetorium" class="btn btn-primary margin-top-5 margin-right-10" target="_blank">Buy It Now!</a>
-              <a href="albums-carousel-no-crop.html" class="btn btn-white-bordered margin-top-5">Discover More</a>
+              <a href="albums-grid.html" class="btn btn-white-bordered margin-top-5">Discover More</a>
             </div>
           </div>
           <!-- End intro caption -->
@@ -156,10 +165,10 @@
         <div class="cc-item">
 
           <!-- Element cover -->
-          <span class="cover bg-transparent-5-dark"></span>
+          <span class="cover bg-transparent-4-dark"></span>
 
           <!-- cc image -->
-          <div class="cc-image bg-image" style="background-image: url(assets/img/intro/intro-4.jpg); background-position: 50% 50%;"></div>
+          <div class="cc-image bg-image" style="background-image: url(assets/img/intro/intro-9.jpg); background-position: 50% 50%;"></div>
 
           <!-- Begin intro caption 
 								=========================
@@ -177,7 +186,7 @@
 
             <div class="margin-top-30">
               <a href="https://themeforest.net/item/sepia-photography-portfolio-html-website-template/20195226?ref=Themetorium" class="btn btn-primary margin-top-5 margin-right-10" target="_blank">Buy It Now!</a>
-              <a href="albums-carousel-no-crop.html" class="btn btn-white-bordered margin-top-5">Discover More</a>
+              <a href="albums-grid.html" class="btn btn-white-bordered margin-top-5">Discover More</a>
             </div>
           </div>
           <!-- End intro caption -->
@@ -201,7 +210,7 @@
 									</p>
 
 									<div class="margin-top-30">
-										<a href="categories-carousel.html" class="btn btn-white margin-top-5 margin-right-10">View My Work</a>
+										<a href="categories-carousel.html" class="btn btn-primary margin-top-5 margin-right-10">View My Work</a>
 										<a href="contact.html" class="btn btn-white-bordered margin-top-5">Contact</a>
 									</div>
 								</div> -->
@@ -214,5 +223,4 @@
   </div> <!-- /.tt-intro-inner -->
 </section>
 <!-- End intro section -->
-
 {{ end }}

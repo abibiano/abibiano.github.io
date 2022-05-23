@@ -4,7 +4,12 @@
 {{- partial "head.html" . -}}
 
 <body id="body" class="animsition tt-boxed">
-  {{- partial "header.html" . -}}
+
+  <header id="header" class="menu-align-right header-show-hide-on-scroll {{ if .Params.transparentHeader }} header-transparent {{ else }} header-solid{{ end }}">
+    {{- partial "header.html" . -}}
+  </header>
+  <!-- End header -->
+
   <!-- *************************************
   		*********** Begin body content *********** 
   		************************************** -->
