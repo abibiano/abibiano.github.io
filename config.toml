@@ -1,5 +1,5 @@
 baseURL = 'http://bibiano.es/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
-theme = "bibiano-photography"
+title = 'Alex Bibiano Photography'
+theme = 'bibiano-photography'
 

@@ -1,33 +1,34 @@
 {{ $baseUrl := .Site.BaseURL }}
-
-
 <!-- Begin header inner -->
 <div class="header-inner tt-wrap">
   <!-- add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) -->
-
   <!-- Begin logo 
 				================ -->
   <div id="logo">
-    <a href="index.html" class="logo-dark"><img src="{{ $baseUrl }}assets/img/logo-dark.png" alt="logo"></a>
-    <a href="index.html" class="logo-light"><img src="{{ $baseUrl }}assets/img/logo-light.png" alt="logo"></a>
-
+    {{ with (resources.Get "img/logo-dark.png").Resize "x175" | fingerprint }}
+    <a href="{{ $baseUrl }}" class="logo-dark"><img src="{{ .RelPermalink }}" alt="logo"></a>
+    {{ end }}
+    {{ with (resources.Get "img/logo-light.png").Resize "x175" | fingerprint }}
+    <a href="{{ $baseUrl }}" class="logo-light"><img src="{{ .RelPermalink }}" alt="logo"></a>
+    {{ end }}
     <!-- for small screens -->
-    <a href="index.html" class="logo-dark-m"><img src="{{ $baseUrl }}assets/img/logo-dark-m.png" alt="logo"></a>
-    <a href="index.html" class="logo-light-m"><img src="{{ $baseUrl }}assets/img/logo-light-m.png" alt="logo"></a>
+    {{ with (resources.Get "img/logo-dark-m.png").Fit "38x49" | fingerprint }}
+    <a href="{{ $baseUrl }}" class="logo-dark-m"><img src="{{ .RelPermalink }}" alt="logo"></a>
+    {{ end }}
+    {{ with (resources.Get "img/logo-light-m.png").Fit "38x49" | fingerprint }}
+    <a href="{{ $baseUrl }}" class="logo-light-m"><img src="{{ .RelPermalink }}" alt="logo"></a>
+    {{ end }}
   </div>
   <!-- End logo -->
-
   <!-- ====================
 				//// Begin main menu ////
 				===================== -->
   <nav class="tt-main-menu">
-
     <!-- Begin mobile menu toggle button -->
     <div id="tt-m-menu-toggle-btn">
       <span></span>
     </div>
     <!-- End mobile menu toggle button -->
-
     <!-- Collect the nav links for toggling 
 					========================================
 					* Use class "tt-submenu-dark" to enable submenu dark style.
