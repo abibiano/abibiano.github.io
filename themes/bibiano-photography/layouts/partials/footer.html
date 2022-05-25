@@ -13,17 +13,17 @@
         <div class="col-md-3">
           <!-- Begin footer logo -->
           <div id="footer-logo">
-            {{ with (resources.Get "img/logo-dark.png").Fit "189x116" | fingerprint }}
+            {{ with (resources.Get "img/logo-dark.png").Fit "200x70" | fingerprint }}
             <a href="{{ $baseUrl }}" class="logo-dark"><img src="{{ .RelPermalink }}" alt="logo"></a>
             {{ end }}
-            {{ with (resources.Get "img/logo-light.png").Fit "189x116" | fingerprint }}
+            {{ with (resources.Get "img/logo-light.png").Fit "200x70" | fingerprint }}
             <a href="{{ $baseUrl }}" class="logo-light"><img src="{{ .RelPermalink }}" alt="logo"></a>
             {{ end }}
             <!-- for small screens -->
-            {{ with (resources.Get "img/logo-dark-m.png").Fit "38x49" | fingerprint }}
+            {{ with (resources.Get "img/logo-dark-m.png").Fit "50x50" | fingerprint }}
             <a href="{{ $baseUrl }}" class="logo-dark-m"><img src="{{ .RelPermalink }}" alt="logo"></a>
             {{ end }}
-            {{ with (resources.Get "img/logo-light-m.png").Fit "38x49" | fingerprint }}
+            {{ with (resources.Get "img/logo-light-m.png").Fit "50x50" | fingerprint }}
             <a href="{{ $baseUrl }}" class="logo-light-m"><img src="{{ .RelPermalink }}" alt="logo"></a>
             {{ end }}
           </div>
@@ -32,9 +32,10 @@
         <div class="col-md-5">
           <!-- Begin footer text -->
           <div class="footer-text">
-            <h4>- Creative Photo Studio</h4>
-            Sed non auctor magna. Nunc eu ultrices orci. Donec commodo ligula in massa ultricies volutpat. Fusce vel
-            cursus lectus. Cras commodo odio mi, eu cursus nibh iaculis ut.
+            <h4>- Alex Bibiano Photography</h4>
+            Sitio dedicado a compartir y mostrar mis trabajos fotográficos realizados durante el tiempo que puedo
+            dedicar a mi gran
+            afición, siendo como soy ingeniero informático de profesión.
           </div>
           <!-- End footer text -->
         </div> <!-- /.col -->
@@ -74,7 +75,7 @@
           <div class="col-md-6 col-md-pull-6">
             <!-- Begin footer copyright -->
             <div class="footer-copyright">
-              <p>&copy; Alex Bibiano 2022 / All rights reserved</p>
+              <p>&copy; Alex Bibiano 2022 / Todos los derechos reservados</p>
             </div>
             <!-- End footer copyright -->
           </div> <!-- /.col -->
@@ -90,25 +91,25 @@
 		///// Scripts below /////
 		===================== -->
 <!-- Core JS -->
-<script src="{{ $baseUrl }}/assets/vendor/jquery/jquery.min.js"></script> <!-- jquery JS (https://jquery.com) -->
-<script src="{{ $baseUrl }}/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="{{ $baseUrl }}assets/vendor/jquery/jquery.min.js"></script> <!-- jquery JS (https://jquery.com) -->
+<script src="{{ $baseUrl }}assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 <!-- bootstrap JS (http://getbootstrap.com) -->
 <!-- Libs and Plugins JS -->
-<script src="{{ $baseUrl }}/assets/vendor/animsition/js/animsition.min.js"></script>
+<script src="{{ $baseUrl }}assets/vendor/animsition/js/animsition.min.js"></script>
 <!-- Animsition JS (http://git.blivesta.com/animsition/) -->
-<script src="{{ $baseUrl }}/assets/vendor/jquery.easing.min.js"></script>
+<script src="{{ $baseUrl }}assets/vendor/jquery.easing.min.js"></script>
 <!-- Easing JS (http://gsgd.co.uk/sandbox/jquery/easing/) -->
-<script src="{{ $baseUrl }}/assets/vendor/isotope.pkgd.min.js"></script>
+<script src="{{ $baseUrl }}assets/vendor/isotope.pkgd.min.js"></script>
 <!-- Isotope JS (http://isotope.metafizzy.co) -->
-<script src="{{ $baseUrl }}/assets/vendor/imagesloaded.pkgd.min.js"></script>
+<script src="{{ $baseUrl }}assets/vendor/imagesloaded.pkgd.min.js"></script>
 <!-- ImagesLoaded JS (https://github.com/desandro/imagesloaded) -->
-<script src="{{ $baseUrl }}/assets/vendor/owl-carousel/js/owl.carousel.min.js"></script>
+<script src="{{ $baseUrl }}assets/vendor/owl-carousel/js/owl.carousel.min.js"></script>
 <!-- Owl Carousel JS (https://owlcarousel2.github.io/OwlCarousel2/) -->
-<script src="{{ $baseUrl }}/assets/vendor/jquery.mousewheel.min.js"></script>
+<script src="{{ $baseUrl }}assets/vendor/jquery.mousewheel.min.js"></script>
 <!-- A jQuery plugin that adds cross browser mouse wheel support (https://github.com/jquery/jquery-mousewheel) -->
-<script src="{{ $baseUrl }}/assets/vendor/ytplayer/js/jquery.mb.YTPlayer.min.js"></script>
+<script src="{{ $baseUrl }}assets/vendor/ytplayer/js/jquery.mb.YTPlayer.min.js"></script>
 <!-- YTPlayer JS (more info: https://github.com/pupunzi/jquery.mb.YTPlayer) -->
-<script src="{{ $baseUrl }}/assets/vendor/lightgallery/js/lightgallery-all.min.js"></script>
+<script src="{{ $baseUrl }}assets/vendor/lightgallery/js/lightgallery-all.min.js"></script>
 <!-- lightGallery Plugins JS (http://sachinchoolur.github.io/lightGallery) -->
 <!-- Theme master JS -->
-<script src="{{ $baseUrl }}/assets/js/theme.js"></script>
+<script src="{{ $baseUrl }}assets/js/theme.js"></script>

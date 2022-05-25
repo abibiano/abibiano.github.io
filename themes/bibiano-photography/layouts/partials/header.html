@@ -5,17 +5,17 @@
   <!-- Begin logo 
 				================ -->
   <div id="logo">
-    {{ with (resources.Get "img/logo-dark.png").Resize "x175" | fingerprint }}
+    {{ with (resources.Get "img/logo-dark.png").Fit "200x70" | fingerprint }}
     <a href="{{ $baseUrl }}" class="logo-dark"><img src="{{ .RelPermalink }}" alt="logo"></a>
     {{ end }}
-    {{ with (resources.Get "img/logo-light.png").Resize "x175" | fingerprint }}
+    {{ with (resources.Get "img/logo-light.png").Fit "200x70" | fingerprint }}
     <a href="{{ $baseUrl }}" class="logo-light"><img src="{{ .RelPermalink }}" alt="logo"></a>
     {{ end }}
     <!-- for small screens -->
-    {{ with (resources.Get "img/logo-dark-m.png").Fit "38x49" | fingerprint }}
+    {{ with (resources.Get "img/logo-dark-m.png").Fit "50x50" | fingerprint }}
     <a href="{{ $baseUrl }}" class="logo-dark-m"><img src="{{ .RelPermalink }}" alt="logo"></a>
     {{ end }}
-    {{ with (resources.Get "img/logo-light-m.png").Fit "38x49" | fingerprint }}
+    {{ with (resources.Get "img/logo-light-m.png").Fit "50x50" | fingerprint }}
     <a href="{{ $baseUrl }}" class="logo-light-m"><img src="{{ .RelPermalink }}" alt="logo"></a>
     {{ end }}
   </div>
