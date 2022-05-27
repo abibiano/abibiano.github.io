@@ -1,5 +1,10 @@
-baseURL = 'https://bibiano.es/'
-languageCode = 'en-us'
-title = 'Alex Bibiano Photography'
-theme = 'bibiano-photography'
-
+baseURL = "https://bibiano.es/"
+languageCode = "en-us"
+title = "Alex Bibiano Photography"
+author = "Alex Bibiano"
+[params]
+  instagram = "https://www.instagram.com/alexbibianophotography"
+  facebook = "https://www.facebook.com/alexbibianophotography"
+  summary = "Sitio dedicado a compartir y mostrar los trabajos fotográficos realizado durante el tiempo dedicado a mi afición, la fotografía."
+  description = "Sitio dedicado a mostrar y compartir los trabajos fotográficos de Alex Bibiano."
+  keywords = "alex, bibiano, photography, fotografía, fotografia"
