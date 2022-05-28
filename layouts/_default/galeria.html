@@ -67,8 +67,10 @@
           <!-- cc auto width img for small devices -->
           <div class="cc-image cc-auto-width-img-bg bg-image" style="background-image: url({{ $image.RelPermalink }});">
           </div>
+          {{ if not (eq $title "") }}
           <!-- Gallery single item image caption -->
           <div class="gsi-image-caption">{{ $title }}</div>
+          {{ end }}
         </a>
         <!-- End carousel item -->
         {{ end }}
