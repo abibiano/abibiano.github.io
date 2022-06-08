@@ -3,6 +3,7 @@ title: "Finart"
 LinkTitle: "Finart"
 layout: galeria
 sections: [
+  ["photos/portfolio/fineart/20220608-2022-06-05-ABG-1748.jpg", ""],
   ["photos/portfolio/fineart/2022-04-10-ABG-569 1.jpg", ""],
   ["photos/portfolio/fineart/20200412-20200223-215032-ABG 1.jpg", ""],
   ["photos/portfolio/fineart/20210409_2021-cataloge0668.jpg", ""],
