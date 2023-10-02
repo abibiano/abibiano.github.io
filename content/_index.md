@@ -39,8 +39,7 @@ backgroundimages:
     [
       "photos/portada/social.jpg",
       "Social",
-      La fotografía sólo puede representar el presente. Una vez fotografiados,
-      el sujeto se convierte en parte del pasado.",
+      "La fotografía sólo puede representar el presente. Una vez fotografiados, el sujeto se convierte en parte del pasado.",
       "Berenice Abbot",
     ],
   ]
