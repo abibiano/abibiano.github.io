@@ -17,3 +17,10 @@ make serve
 make build-mac
 
 ```
+
+### Deploy the site to GitHub page
+
+```sh
+push to master branch
+
+```
