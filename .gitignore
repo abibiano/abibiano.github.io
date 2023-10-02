@@ -13,3 +13,5 @@ $RECYCLE.BIN/
 
 # OSX
 .DS_Store
+.vscode/dryrun.log
+.vscode/targets.log
