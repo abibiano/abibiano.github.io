@@ -20,24 +20,29 @@
 						-->
       <div class="tt-heading">
         <div class="tt-heading-inner">
-          <h1 class="tt-heading-title">Ponte en contacto conmigo</h1>
+          <h1 class="tt-heading-title">{{ i18n "contacto_conmigo" }}</h1>
           <!-- <div class="tt-heading-subtitle">Subtitle Here</div> -->
           <hr class="hr-short">
         </div> <!-- /.tt-heading-inner -->
       </div>
       <!-- End tt-heading -->
       <div class="contact-info margin-top-40">
-        <p><i class="fas fa-home"></i> dirección: {{ .Params.address }}</p>
-        <p><i class="fas fa-phone"></i> teléfono: {{ .Params.phone }}</p>
-        <p><i class="fas fa-envelope"></i> email: <a href="mailto:{{ .Params.email }}" target="_blank">{{ .Params.email
+        <p><i class="fas fa-home"></i> {{ i18n "direccion" }}: {{ .Params.address }}</p>
+        <p><i class="fas fa-phone"></i> {{ i18n "telefono" }}: {{ .Params.phone }}</p>
+        <p><i class="fas fa-envelope"></i> {{ i18n "email" }}: <a href="mailto:{{ .Params.email }}" target="_blank">{{
+            .Params.email
             }}</a>
         </p>
       </div>
       <!-- Begin social buttons -->
       <div class="social-buttons margin-top-20">
         <ul>
-          <li><a href="{{ .Site.Params.instagram }}" class="btn btn-social-min btn-default btn-rounded-full"
-              title="Sígueme en Instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="{{ .Site.Params.vero }}" class="btn btn-social-min btn-default btn-rounded-full" title="{{
+                            i18n "sigueme_vero" }}" target="_blank">
+              {{ with (resources.Get "img/VERO_Icon_Regular_Black.png").Fit "24x24" | fingerprint }}
+              <img class="fab" src="{{ .RelPermalink }}"></img>
+              {{ end }}
+          </a></li>
         </ul>
       </div>
       <!-- End social buttons -->

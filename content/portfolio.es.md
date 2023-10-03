@@ -11,6 +11,6 @@ sections:
     ["photos/portada/macro.jpg", "Macro", "/galeria/macro"],
     ["photos/portada/retrato.jpg", "Retrato", "/galeria/retrato"],
     ["photos/portada/fineart.jpg", "Fineart", "/galeria/finart"],
-    ["photos/portada/social.jpg", "Social + Otros", "/galeria/social"],
+    ["photos/portada/social.jpg", "Street & Otros", "/galeria/social"],
   ]
 ---

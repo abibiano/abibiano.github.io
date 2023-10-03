@@ -1,10 +1,27 @@
 baseURL = "https://bibiano.es/"
-languageCode = "en-us"
 title = "Alex Bibiano Photography"
 author = "Alex Bibiano"
 [params]
-  instagram = "https://www.instagram.com/alexbibianophotography"
   vero = "https://vero.co/abibiano"
-  summary = "Sitio dedicado a compartir y mostrar los trabajos fotográficos realizado durante el tiempo dedicado a mi afición, la fotografía."
-  description = "Sitio dedicado a mostrar y compartir los trabajos fotográficos de Alex Bibiano."
   keywords = "alex, bibiano, photography, fotografía, fotografia"
+defaultContentLanguage = 'es'
+defaultContentLanguageInSubdir = true
+[languages]
+  [languages.es]
+    disabled = false
+    languageCode = 'es-ES'
+    languageDirection = 'ltr'
+    languageName = 'Spanish'
+    weight = 1
+    [languages.es.params]
+      summary = "Sitio dedicado a compartir y mostrar los trabajos fotográficos realizado durante el tiempo dedicado a mi afición, la fotografía."
+      description = "Sitio dedicado a mostrar y compartir los trabajos fotográficos de Alex Bibiano."
+  [languages.en]
+    disabled = false
+    languageCode = 'en-US'
+    languageDirection = 'ltr'
+    languageName = 'English'
+    weight = 2
+    [languages.en.params]
+      summary = "Site dedicated to sharing and showing the photographic works done during the time dedicated to my hobby, photography."
+      description = "Site dedicated to showing and sharing the photographic works of Alex Bibiano."

@@ -4,17 +4,10 @@ Personal web page developed with HUGO static site generator.
 
 ## Code Snippets
 
-### View the site
+### View the site when developing
 
 ```sh
 make serve
-
-```
-
-### Build the site on macOS
-
-```sh
-make build-mac
 
 ```
 
@@ -22,5 +15,12 @@ make build-mac
 
 ```sh
 push to master branch
+
+```
+
+### Build the site on macOS
+
+```sh
+make build-mac
 
 ```

@@ -55,10 +55,10 @@
                   <p>{{ .Content }}</p>
                 </div>
                 {{ with .Site.GetPage "/contacto" }}
-                <a href="{{ .RelPermalink }}" class="btn btn-primary margin-top-20">Contáctame!</a>
+                <a href="{{ .RelPermalink }}" class="btn btn-primary margin-top-20">{{ i18n "contactame" }}</a>
                 {{ end }}
                 {{ with .Site.GetPage "/portfolio" }}
-                <a href="{{ .RelPermalink }}" class="btn btn-dark margin-top-20">Ver mi trabajo</a>
+                <a href="{{ .RelPermalink }}" class="btn btn-dark margin-top-20">{{ i18n "ver_mi_trabajo" }}</a>
                 {{ end }}
               </div>
               <!-- End split box content -->

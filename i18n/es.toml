@@ -1,0 +1,18 @@
+[direccion]
+  other = 'dirección'
+[telefono]
+  other = 'teléfono'
+[email]
+  other = 'correo electrónico'
+[copyright]
+  other = 'Todos los derechos reservados'
+[contacto_conmigo]
+  other = 'Ponte en contacto conmigo'
+[contactame]
+  other = '¡Contáctame!'
+[ver_mi_trabajo]
+  other = 'Ver mi trabajo'
+[escribeme_unas_lineas]
+  other = 'Escríbeme unas líneas'
+[sigueme_vero]
+  other = 'Sígueme en Vero'
