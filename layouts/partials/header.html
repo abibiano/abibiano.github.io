@@ -41,7 +41,7 @@
         <li><a href="{{ .URL }}">{{ .Name }}</a></li>
         {{ end }}
         <li class="tt-submenu-wrap tt-submenu-master">
-          <a href="#0">{{ i18n "idioma" }}</a>
+          <a href="#0"><i class="fas fa-globe"></i></a>
           <ul class="tt-submenu">
             {{ range $.Site.Home.AllTranslations }}
             <li><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>

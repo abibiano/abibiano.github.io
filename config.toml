@@ -1,18 +1,18 @@
 baseURL = "https://bibiano.es/"
 title = "Alex Bibiano Photography"
 author = "Alex Bibiano"
+defaultContentLanguage = "es"
+defaultContentLanguageInSubdir = false
 [params]
   vero = "https://vero.co/abibiano"
   keywords = "alex, bibiano, photography, fotografía, fotografia"
-defaultContentLanguage = "en"
-defaultContentLanguageInSubdir = true
 [languages]
   [languages.en]
     disabled = false
     languageCode = "en"
     languageDirection = "ltr"
     languageName = "English"
-    weight = 1
+    weight = 2
     [languages.en.params]
       summary = "Site dedicated to sharing and showing the photographic works done during the time dedicated to my hobby, photography."
       description = "Site dedicated to showing and sharing the photographic works of Alex Bibiano."
@@ -21,7 +21,7 @@ defaultContentLanguageInSubdir = true
     languageCode = "es"
     languageDirection = "ltr"
     languageName = "Spanish"
-    weight = 2
+    weight = 1
     [languages.es.params]
       summary = "Sitio dedicado a compartir y mostrar los trabajos fotográficos realizado durante el tiempo dedicado a mi afición, la fotografía."
       description = "Sitio dedicado a mostrar y compartir los trabajos fotográficos de Alex Bibiano."
