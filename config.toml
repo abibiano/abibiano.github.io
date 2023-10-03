@@ -4,24 +4,24 @@ author = "Alex Bibiano"
 [params]
   vero = "https://vero.co/abibiano"
   keywords = "alex, bibiano, photography, fotografía, fotografia"
-defaultContentLanguage = 'es'
+defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 [languages]
-  [languages.es]
-    disabled = false
-    languageCode = 'es-ES'
-    languageDirection = 'ltr'
-    languageName = 'Spanish'
-    weight = 1
-    [languages.es.params]
-      summary = "Sitio dedicado a compartir y mostrar los trabajos fotográficos realizado durante el tiempo dedicado a mi afición, la fotografía."
-      description = "Sitio dedicado a mostrar y compartir los trabajos fotográficos de Alex Bibiano."
   [languages.en]
     disabled = false
-    languageCode = 'en-US'
-    languageDirection = 'ltr'
-    languageName = 'English'
-    weight = 2
+    languageCode = "en"
+    languageDirection = "ltr"
+    languageName = "English"
+    weight = 1
     [languages.en.params]
       summary = "Site dedicated to sharing and showing the photographic works done during the time dedicated to my hobby, photography."
       description = "Site dedicated to showing and sharing the photographic works of Alex Bibiano."
+  [languages.es]
+    disabled = false
+    languageCode = "es"
+    languageDirection = "ltr"
+    languageName = "Spanish"
+    weight = 2
+    [languages.es.params]
+      summary = "Sitio dedicado a compartir y mostrar los trabajos fotográficos realizado durante el tiempo dedicado a mi afición, la fotografía."
+      description = "Sitio dedicado a mostrar y compartir los trabajos fotográficos de Alex Bibiano."
