@@ -1,7 +1,0 @@
-make.exe --dry-run --always-make --keep-going --print-directory
-make: Entering directory 'c:/Users/abibi/OneDrive/Nikel/projects/private/abibiano.github.io'
-rm -fr public/
- 
-hugo
-make: Leaving directory 'c:/Users/abibi/OneDrive/Nikel/projects/private/abibiano.github.io'
- 
