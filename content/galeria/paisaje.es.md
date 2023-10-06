@@ -4,6 +4,7 @@ LinkTitle: "Paisaje"
 layout: galeria
 sections:
   [
+    ["photos/portfolio/paisaje/2023_09__ABG8518_edit-2.jpg", ""],
     ["photos/portfolio/paisaje/2023_09__ABG8506_edit.jpg", ""],
     ["photos/portfolio/paisaje/2023_08_L1001237_edit.jpg", ""],
     ["photos/portfolio/paisaje/2023_08__ABG8474_edit.jpg", ""],
