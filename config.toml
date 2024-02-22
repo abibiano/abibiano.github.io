@@ -4,7 +4,8 @@ author = "Alex Bibiano"
 defaultContentLanguage = "es"
 defaultContentLanguageInSubdir = false
 [params]
-  vero = "https://vero.co/abibiano"
+  glass = "https://glass.photo/abibiano"
+  instagram = "https://www.instagram.com/alexbibianophotography/"
   keywords = "alex, bibiano, photography, fotografía, fotografia"
 [languages]
   [languages.en]

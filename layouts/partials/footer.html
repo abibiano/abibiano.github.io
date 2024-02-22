@@ -41,20 +41,22 @@
           <!-- Begin social buttons -->
           <div class="social-buttons">
             <ul>
-              
-              <li><a href="{{ .Site.Params.vero }}" class="btn btn-social-min btn-default btn-rounded-full"
-                  title="{{
-                  i18n "sigueme_vero" }}" target="_blank">
-                  {{ with (resources.Get "img/VERO_Icon_Regular_White.png").Fit "24x24" | fingerprint }}
+              <li><a href="{{ .Site.Params.glass }}" class="btn btn-social-min btn-default btn-rounded-full" title="{{
+                  i18n " sigueme_glass" }}" target="_blank">
+                  {{ with (resources.Get "img/glass-photo.png").Fit "24x24" | fingerprint }}
                   <img class="fab" src="{{ .RelPermalink }}"></img>
                   {{ end }}
-              </a></li>
-              
+                </a></li>
+              <li><a href="{{ .Site.Params.instagram }}" class="btn btn-social-min btn-default btn-rounded-full" title="{{
+                                              i18n " sigueme_instagram" }}" target="_blank">
+                  {{ with (resources.Get "img/instagram.png").Fit "24x24" | fingerprint }}
+                  <img class="fab" src="{{ .RelPermalink }}"></img>
+                  {{ end }}
+                </a></li>
               {{ with .Site.GetPage "/contacto" }}
               <li><a href="{{ .RelPermalink }}" class="btn btn-social-min btn-default btn-rounded-full" title="{{
-                  i18n "escribeme_unas_lineas" }}" target="_blank"><i class="fas fa-envelope"></i></a></li>
+                  i18n " escribeme_unas_lineas" }}" target="_blank"><i class="fas fa-envelope"></i></a></li>
               {{ end }}
-
             </ul>
           </div>
           <!-- End social buttons -->
@@ -77,7 +79,7 @@
           <div class="col-md-6 col-md-pull-6">
             <!-- Begin footer copyright -->
             <div class="footer-copyright">
-              <p>&copy; Alex Bibiano 2022 · {{ i18n "copyright" }}</p>
+              <p>&copy; Alex Bibiano 2024 · {{ i18n "copyright" }}</p>
             </div>
             <!-- End footer copyright -->
           </div> <!-- /.col -->

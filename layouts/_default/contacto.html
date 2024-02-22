@@ -37,12 +37,18 @@
       <!-- Begin social buttons -->
       <div class="social-buttons margin-top-20">
         <ul>
-          <li><a href="{{ .Site.Params.vero }}" class="btn btn-social-min btn-default btn-rounded-full" title="{{
-                            i18n "sigueme_vero" }}" target="_blank">
-              {{ with (resources.Get "img/VERO_Icon_Regular_Black.png").Fit "24x24" | fingerprint }}
+          <li><a href="{{ .Site.Params.glass }}" class="btn btn-social-min btn-default btn-rounded-full" title="{{
+                                          i18n " sigueme_glass" }}" target="_blank">
+              {{ with (resources.Get "img/glass-photo.png").Fit "24x24" | fingerprint }}
               <img class="fab" src="{{ .RelPermalink }}"></img>
               {{ end }}
-          </a></li>
+            </a></li>
+          <li><a href="{{ .Site.Params.instagram }}" class="btn btn-social-min btn-default btn-rounded-full" title="{{
+                                                                      i18n " sigueme_instagram" }}" target="_blank">
+              {{ with (resources.Get "img/instagram.png").Fit "24x24" | fingerprint }}
+              <img class="fab" src="{{ .RelPermalink }}"></img>
+              {{ end }}
+            </a></li>
         </ul>
       </div>
       <!-- End social buttons -->
