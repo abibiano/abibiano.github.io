@@ -1,5 +1,6 @@
 HUGO ?= hugo
-PUBLIC_DIR ?= public/
+PUBLIC_DIR ?= public
+RESOURCES_DIR ?= resources
 RM ?= rm -rf
 DEV_FLAGS ?= -D -F --navigateToChanged --disableFastRender --noHTTPCache --enableGitInfo --bind 0.0.0.0 -p 1313
 .DEFAULT_GOAL := build-mac
@@ -16,5 +17,6 @@ build:
 
 clean:
 	$(RM) $(PUBLIC_DIR)
+	$(RM) $(RESOURCES_DIR)
 
 build-mac: clean build
