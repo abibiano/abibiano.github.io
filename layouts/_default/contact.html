@@ -1,0 +1,52 @@
+{{ define "main" }}
+<section id="contact-section" class="contact-simple">
+  <div class="contact-section-inner full-height-vh">
+    <!-- Background Image -->
+    <div class="full-cover bg-image"
+      style="background-image: url(assets/img/misc/contact-bg-2.jpg); background-position: 50% 50%;"></div>
+    <!-- Transparent Overlay -->
+    <div class="cover bg-transparent-1-dark"></div>
+    <!-- Contact Info -->
+    <div class="contact-info-wrap">
+      <!-- Heading -->
+      <div class="tt-heading">
+        <div class="tt-heading-inner">
+          <h1 class="tt-heading-title">Contact Me</h1>
+          <hr class="hr-short">
+        </div>
+      </div>
+      <!-- Contact Details -->
+      <div class="contact-info margin-top-40">
+        <p><i class="fas fa-home"></i> Address: {{ .Params.address }}</p>
+        <p><i class="fas fa-phone"></i> Phone: {{ .Params.phone }}</p>
+        <p><i class="fas fa-envelope"></i> Email:
+          <a href="mailto:{{ .Params.email }}" target="_blank">{{ .Params.email }}</a>
+        </p>
+      </div>
+      <!-- Social Buttons -->
+      <div class="social-buttons margin-top-20">
+        <ul>
+          {{ $glass := .Site.Params.glass }}
+          {{ $instagram := .Site.Params.instagram }}
+          {{ with (resources.Get "img/glass-photo.png").Fit "24x24" | fingerprint }}
+          <li>
+            <a href="{{ $glass }}" class="btn btn-social-min btn-default btn-rounded-full"
+              title="Follow me on Glass" aria-label="Follow me on Glass" target="_blank">
+              <img class="fab" src="{{ .RelPermalink }}" alt="Glass">
+            </a>
+          </li>
+          {{ end }}
+          {{ with (resources.Get "img/instagram.png").Fit "24x24" | fingerprint }}
+          <li>
+            <a href="{{ $instagram }}" class="btn btn-social-min btn-default btn-rounded-full"
+              title="Follow me on Instagram" aria-label="Follow me on Instagram" target="_blank">
+              <img class="fab" src="{{ .RelPermalink }}" alt="Instagram">
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

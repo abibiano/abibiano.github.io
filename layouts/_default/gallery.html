@@ -1,0 +1,38 @@
+{{ define "main" }}
+<section id="gallery-single-section" class="gallery-single-carousel gs-carousel-center">
+  {{ with .File }}
+  {{ $galleryType := .BaseFileName | title }}
+  {{ $path := printf "photos/portfolio/%s/*" .BaseFileName }}
+  {{ $images := resources.Match $path }}
+  {{ with index $images 0 }}
+  <div class="page-background bg-image" style="background-image: url('{{ .Permalink }}');"></div>
+  {{ end }}
+  {{ end }}
+  <div class="gallery-single-carousel-inner tt-wrap">
+    <div class="gs-carousel-wrap">
+      <div class="owl-carousel lightgallery cc-height-full owl-mousewheel nav-light cc-hover-light" data-items="3"
+        data-center="true" data-margin="80" data-autowidth="true" data-loop="true" data-nav="true" data-nav-speed="800"
+        data-dots="false">
+        {{ with .File }}
+        {{ $galleryType := .BaseFileName | title }}
+        {{ $path := printf "photos/portfolio/%s/*" .BaseFileName }}
+        {{ range (resources.Match $path) }}
+        {{ if eq .MediaType.MainType "image" }}
+        {{ $original := . }}
+        {{ $thumbnail := $original.Fit "100x100" }}
+        <!-- Carousel item -->
+        <a href="{{ $original.Permalink }}" class="cc-item lg-trigger" data-exthumbnail="{{ $thumbnail.Permalink }}">
+          <!-- Image -->
+          <img class="cc-image cc-auto-width-img" src="{{ $original.Permalink }}">
+          <div class="cc-image cc-auto-width-img-bg bg-image" style="background-image: url('{{ $original.Permalink  }}');">
+          </div>
+        </a>
+        <!-- End carousel item -->
+        {{ end }}
+        {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

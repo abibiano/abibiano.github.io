@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-{{ $lang := .Site.Language.Lang | default "es" }}
-<html lang="{{ $lang }}">
-{{- partial "head.html" . -}}
+<html lang="en">
+  {{ partial "head.html" . }}
 
-<body id="body" class="animsition tt-boxed">
+  <body id="body" class="animsition tt-boxed">
+    <!-- Header -->
+    <header id="header"
+      class="menu-align-right header-show-hide-on-scroll {{ if .Params.transparentHeader }}header-transparent{{ else }}header-solid{{ end }}">
+      {{ partial "header.html" . }}
+    </header>
+    <!-- End Header -->
 
-  <header id="header" class="menu-align-right header-show-hide-on-scroll {{ if .Params.transparentHeader }} header-transparent {{ else }} header-solid{{ end }}">
-    {{- partial "header.html" . -}}
-  </header>
-  <!-- End header -->
+    <!-- Main Content -->
+    <div id="body-content" role="main">
+      {{ block "main" . }}{{ end }}
+    </div>
+    <!-- End Main Content -->
 
-  <!-- *************************************
-  		*********** Begin body content *********** 
-  		************************************** -->
-  <div id="body-content">
-    {{- block "main" . }}{{- end }}
-  </div>
-  <!-- End body content -->
-  {{- partial "footer.html" . -}}
-</body>
-
+    <!-- Footer -->
+    {{ partial "footer.html" . }}
+  </body>
 </html>

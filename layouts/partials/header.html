@@ -1,56 +1,38 @@
 {{ $baseUrl := .Site.BaseURL }}
-<!-- Begin header inner -->
+{{ $currentPage := . }}
 <div class="header-inner tt-wrap">
-  <!-- add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) -->
-  <!-- Begin logo 
-				================ -->
+  <!-- Logo Section -->
   <div id="logo">
-    {{ with (resources.Get "img/logo-dark.png").Fit "200x70" | fingerprint }}
-    <a href="{{ $baseUrl }}" class="logo-dark"><img src="{{ .RelPermalink }}" alt="logo"></a>
+    {{ $logos := dict
+    "dark" (dict "size" "200x70" "class" "logo-dark")
+    "light" (dict "size" "200x70" "class" "logo-light")
+    "dark-m" (dict "size" "50x50" "class" "logo-dark-m")
+    "light-m" (dict "size" "50x50" "class" "logo-light-m")
+    }}
+    {{ range $name, $config := $logos }}
+    {{ with (resources.Get (printf "img/logo-%s.png" $name)).Fit $config.size | fingerprint }}
+    <a href="{{ $baseUrl }}" class="{{ $config.class }}">
+      <img src="{{ .RelPermalink }}" alt="Logo {{ $name }}" loading="{{ cond (eq $name "dark" "light") "eager" "lazy" }}"
+        width="{{ index (split $config.size "x") 0 }}" height="{{ index (split $config.size "x") 1 }}">
+    </a>
     {{ end }}
-    {{ with (resources.Get "img/logo-light.png").Fit "200x70" | fingerprint }}
-    <a href="{{ $baseUrl }}" class="logo-light"><img src="{{ .RelPermalink }}" alt="logo"></a>
-    {{ end }}
-    <!-- for small screens -->
-    {{ with (resources.Get "img/logo-dark-m.png").Fit "50x50" | fingerprint }}
-    <a href="{{ $baseUrl }}" class="logo-dark-m"><img src="{{ .RelPermalink }}" alt="logo"></a>
-    {{ end }}
-    {{ with (resources.Get "img/logo-light-m.png").Fit "50x50" | fingerprint }}
-    <a href="{{ $baseUrl }}" class="logo-light-m"><img src="{{ .RelPermalink }}" alt="logo"></a>
     {{ end }}
   </div>
-  <!-- End logo -->
-  <!-- ====================
-				//// Begin main menu ////
-				===================== -->
+  <!-- Main Navigation -->
   <nav class="tt-main-menu">
-    
-    <!-- Begin mobile menu toggle button -->
-    <div id="tt-m-menu-toggle-btn">
+    <button id="tt-m-menu-toggle-btn" aria-label="Toggle Menu">
       <span></span>
-    </div>
-    <!-- End mobile menu toggle button -->
-    <!-- Collect the nav links for toggling 
-					========================================
-					* Use class "tt-submenu-dark" to enable submenu dark style.
-					-->
+    </button>
     <div class="tt-menu-collapse tt-submenu-dark">
       <ul class="tt-menu-nav">
-        {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
-        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-        {{ end }}
-        <li class="tt-submenu-wrap tt-submenu-master">
-          <a href="#0"><i class="fas fa-globe"></i></a>
-          <ul class="tt-submenu">
-            {{ range $.Site.Home.AllTranslations }}
-            <li><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
-            {{ end }}
-          </ul>
+        <li>
+          <a href="{{ .URL }}" {{ if hasPrefix .URL "http" }}target="_blank" rel="noopener"{{ end }}>
+            {{ .Name }}
+          </a>
         </li>
-      </ul> <!-- /.tt-menu-nav -->
-    </div> <!-- /.tt-menu-collapse -->
+        {{ end }}
+      </ul>
+    </div>
   </nav>
-  <!-- End main menu -->
 </div>
-<!-- End header inner -->

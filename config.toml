@@ -1,28 +1,35 @@
 baseURL = "https://bibiano.es/"
 title = "Alex Bibiano Photography"
 author = "Alex Bibiano"
-defaultContentLanguage = "es"
-defaultContentLanguageInSubdir = false
+languageCode = "en"
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+sitemap = true
+
 [params]
   glass = "https://glass.photo/abibiano"
   instagram = "https://www.instagram.com/alexbibianophotography/"
-  keywords = "alex, bibiano, photography, fotografía, fotografia"
-[languages]
-  [languages.en]
-    disabled = false
-    languageCode = "en"
-    languageDirection = "ltr"
-    languageName = "English"
-    weight = 2
-    [languages.en.params]
-      summary = "Site dedicated to sharing and showing the photographic works done during the time dedicated to my hobby, photography."
-      description = "Site dedicated to showing and sharing the photographic works of Alex Bibiano."
-  [languages.es]
-    disabled = false
-    languageCode = "es"
-    languageDirection = "ltr"
-    languageName = "Spanish"
-    weight = 1
-    [languages.es.params]
-      summary = "Sitio dedicado a compartir y mostrar los trabajos fotográficos realizado durante el tiempo dedicado a mi afición, la fotografía."
-      description = "Sitio dedicado a mostrar y compartir los trabajos fotográficos de Alex Bibiano."
+  keywords = ["alex", "bibiano", "photography", "nature", "wildlife", "landscape", "macro", "nature photography", "wildlife photography", "landscape photography", "macro photography", "still life"]
+  description = "Website dedicated to sharing and showcasing the photographic works created during the time devoted to my hobby, photography."
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 10
+  [[menu.main]]
+    identifier = "portfolio"
+    name = "Portfolio"
+    url = "/portfolio/"
+    weight = 20
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 30
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact/"
+    weight = 40

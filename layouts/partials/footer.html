@@ -1,119 +1,95 @@
 {{ $baseUrl := .Site.BaseURL }}
-<!-- ===========================
-  			///// Begin footer section /////
-  			================================
-  			* Use class "footer-dark" to enable dark footer.
-  			* Use class "no-margin-top" if needed. 
-  			-->
 <section id="footer" class="footer-dark no-margin-top">
-  <!-- margin class is optional -->
   <div class="footer-inner">
     <div class="footer-container tt-wrap">
       <div class="row">
+        <!-- Logo Section -->
         <div class="col-md-3">
-          <!-- Begin footer logo -->
           <div id="footer-logo">
-            {{ with (resources.Get "img/logo-dark.png").Fit "200x70" | fingerprint }}
-            <a href="{{ $baseUrl }}" class="logo-dark"><img src="{{ .RelPermalink }}" alt="logo"></a>
+            {{ $logos := dict
+            "dark" (dict "size" "200x70" "class" "logo-dark")
+            "light" (dict "size" "200x70" "class" "logo-light")
+            "dark-m" (dict "size" "50x50" "class" "logo-dark-m")
+            "light-m" (dict "size" "50x50" "class" "logo-light-m")
+            }}
+            {{ range $name, $config := $logos }}
+            {{ with (resources.Get (printf "img/logo-%s.png" $name)).Fit $config.size | fingerprint }}
+            <a href="{{ $baseUrl }}" class="{{ $config.class }}">
+              <img src="{{ .RelPermalink }}" alt="Logo {{ $name }}" loading="lazy">
+            </a>
             {{ end }}
-            {{ with (resources.Get "img/logo-light.png").Fit "200x70" | fingerprint }}
-            <a href="{{ $baseUrl }}" class="logo-light"><img src="{{ .RelPermalink }}" alt="logo"></a>
-            {{ end }}
-            <!-- for small screens -->
-            {{ with (resources.Get "img/logo-dark-m.png").Fit "50x50" | fingerprint }}
-            <a href="{{ $baseUrl }}" class="logo-dark-m"><img src="{{ .RelPermalink }}" alt="logo"></a>
-            {{ end }}
-            {{ with (resources.Get "img/logo-light-m.png").Fit "50x50" | fingerprint }}
-            <a href="{{ $baseUrl }}" class="logo-light-m"><img src="{{ .RelPermalink }}" alt="logo"></a>
             {{ end }}
           </div>
-          <!-- End footer logo -->
-        </div> <!-- /.col -->
+        </div>
+        <!-- Text Section -->
         <div class="col-md-5">
-          <!-- Begin footer text -->
           <div class="footer-text">
             <h4>- {{ .Site.Title }}</h4>
-            {{ .Site.Params.summary }}
+            <p>{{ .Site.Params.description }}</p>
           </div>
-          <!-- End footer text -->
-        </div> <!-- /.col -->
+        </div>
+        <!-- Social Section -->
         <div class="col-md-4">
-          <!-- Begin social buttons -->
           <div class="social-buttons">
             <ul>
-              <li><a href="{{ .Site.Params.glass }}" class="btn btn-social-min btn-default btn-rounded-full" title="{{
-                  i18n " sigueme_glass" }}" target="_blank">
-                  {{ with (resources.Get "img/glass-photo.png").Fit "24x24" | fingerprint }}
-                  <img class="fab" src="{{ .RelPermalink }}"></img>
-                  {{ end }}
-                </a></li>
-              <li><a href="{{ .Site.Params.instagram }}" class="btn btn-social-min btn-default btn-rounded-full" title="{{
-                                              i18n " sigueme_instagram" }}" target="_blank">
-                  {{ with (resources.Get "img/instagram.png").Fit "24x24" | fingerprint }}
-                  <img class="fab" src="{{ .RelPermalink }}"></img>
-                  {{ end }}
-                </a></li>
-              {{ with .Site.GetPage "/contacto" }}
-              <li><a href="{{ .RelPermalink }}" class="btn btn-social-min btn-default btn-rounded-full" title="{{
-                  i18n " escribeme_unas_lineas" }}" target="_blank"><i class="fas fa-envelope"></i></a></li>
+              {{ $socials := dict
+              "glass" (dict "icon" "glass-photo.png" "param" "glass")
+              "instagram" (dict "icon" "instagram.png" "param" "instagram")
+              }}
+              {{ range $name, $config := $socials }}
+              {{ with (resources.Get (printf "img/%s" $config.icon)).Fit "24x24" | fingerprint }}
+              <li>
+                <a href="{{ index $.Site.Params $config.param }}"
+                  class="btn btn-social-min btn-default btn-rounded-full" title="{{ i18n (printf " sigueme_%s" $name)
+                  }}" aria-label="{{ i18n (printf " sigueme_%s" $name) }}" target="_blank" rel="noopener">
+                  <img class="fab" src="{{ .RelPermalink }}" alt="{{ $name }}" loading="lazy">
+                </a>
+              </li>
+              {{ end }}
               {{ end }}
             </ul>
           </div>
-          <!-- End social buttons -->
-        </div> <!-- /.col -->
-      </div> <!-- /.row -->
-    </div> <!-- /.footer-container -->
+        </div>
+      </div>
+    </div>
+    <!-- Footer Bottom -->
     <div class="footer-bottom">
       <div class="footer-container tt-wrap">
         <div class="row">
           <div class="col-md-6 col-md-push-6">
-            <!-- Begin footer menu -->
             <ul class="footer-menu">
-              {{ $currentPage := . }}
               {{ range .Site.Menus.main }}
               <li><a href="{{ .URL }}">{{ .Name }}</a></li>
               {{ end }}
             </ul>
-            <!-- End footer menu -->
-          </div> <!-- /.col -->
+          </div>
           <div class="col-md-6 col-md-pull-6">
-            <!-- Begin footer copyright -->
             <div class="footer-copyright">
-              <p>&copy; Alex Bibiano 2024 · {{ i18n "copyright" }}</p>
+              <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }} · {{ i18n "copyright" }}</p>
             </div>
-            <!-- End footer copyright -->
-          </div> <!-- /.col -->
-        </div> <!-- /.row -->
-      </div> <!-- /.footer-container -->
-    </div> <!-- /.footer-bottom -->
-  </div> <!-- /.footer-inner -->
-  <!-- Scroll to top button -->
-  <a href="#body" class="scrolltotop sm-scroll" title="Scroll to top"><i class="fas fa-chevron-up"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#body" class="scrolltotop sm-scroll" title="{{ i18n " scroll_to_top" }}">
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+  </a>
 </section>
-<!-- End footer section -->
-<!-- ====================
-		///// Scripts below /////
-		===================== -->
-<!-- Core JS -->
-<script src="{{ $baseUrl }}assets/vendor/jquery/jquery.min.js"></script> <!-- jquery JS (https://jquery.com) -->
-<script src="{{ $baseUrl }}assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-<!-- bootstrap JS (http://getbootstrap.com) -->
-<!-- Libs and Plugins JS -->
-<script src="{{ $baseUrl }}assets/vendor/animsition/js/animsition.min.js"></script>
-<!-- Animsition JS (http://git.blivesta.com/animsition/) -->
-<script src="{{ $baseUrl }}assets/vendor/jquery.easing.min.js"></script>
-<!-- Easing JS (http://gsgd.co.uk/sandbox/jquery/easing/) -->
-<script src="{{ $baseUrl }}assets/vendor/isotope.pkgd.min.js"></script>
-<!-- Isotope JS (http://isotope.metafizzy.co) -->
-<script src="{{ $baseUrl }}assets/vendor/imagesloaded.pkgd.min.js"></script>
-<!-- ImagesLoaded JS (https://github.com/desandro/imagesloaded) -->
-<script src="{{ $baseUrl }}assets/vendor/owl-carousel/js/owl.carousel.min.js"></script>
-<!-- Owl Carousel JS (https://owlcarousel2.github.io/OwlCarousel2/) -->
-<script src="{{ $baseUrl }}assets/vendor/jquery.mousewheel.min.js"></script>
-<!-- A jQuery plugin that adds cross browser mouse wheel support (https://github.com/jquery/jquery-mousewheel) -->
-<script src="{{ $baseUrl }}assets/vendor/ytplayer/js/jquery.mb.YTPlayer.min.js"></script>
-<!-- YTPlayer JS (more info: https://github.com/pupunzi/jquery.mb.YTPlayer) -->
-<script src="{{ $baseUrl }}assets/vendor/lightgallery/js/lightgallery-all.min.js"></script>
-<!-- lightGallery Plugins JS (http://sachinchoolur.github.io/lightGallery) -->
-<!-- Theme master JS -->
-<script src="{{ $baseUrl }}assets/js/theme.js"></script>
+<!-- Scripts -->
+{{ $scripts := slice
+"vendor/jquery/jquery.min.js"
+"vendor/bootstrap/js/bootstrap.min.js"
+"vendor/animsition/js/animsition.min.js"
+"vendor/jquery.easing.min.js"
+"vendor/isotope.pkgd.min.js"
+"vendor/imagesloaded.pkgd.min.js"
+"vendor/owl-carousel/js/owl.carousel.min.js"
+"vendor/jquery.mousewheel.min.js"
+"vendor/ytplayer/js/jquery.mb.YTPlayer.min.js"
+"vendor/lightgallery/js/lightgallery-all.min.js"
+"js/theme.js"
+}}
+{{ range $scripts }}
+<script src="{{ $baseUrl }}assets/{{ . }}" defer></script>
+{{ end }}
